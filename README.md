@@ -1,23 +1,27 @@
-# Lab 1: Dos redes locales conectadas con un router (Cisco Packet Tracer)
+# Lab 1: Two LANs Connected by a Router (Cisco Packet Tracer)
 
-Diseñé y configuré una red con dos subredes conectadas mediante un router Cisco 2911 y dos switches 2960. Asigné direcciones IP estáticas a cuatro PC, configuré las interfaces del router como gateway de cada red y verifiqué la conectividad con `ping` y `show ip route`.
+[Leer en español](README.es.md)
 
-## Diagrama
+**Labs:** Lab 1 (this page) · [Lab 2: DHCP](lab2-dhcp/README.md)
 
-![Diagrama de la red](diagrama-red.png)
+I designed and configured a network with two subnets connected by a Cisco 2911 router and two 2960 switches. I assigned static IP addresses to four PCs, configured the router interfaces as the default gateway for each network, and verified connectivity with `ping` and `show ip route`.
 
-## Direccionamiento
+## Network diagram
 
-| Dispositivo | Red | IP | Máscara | Gateway |
+![Network diagram](diagrama-red.png)
+
+## Addressing table
+
+| Device | Network | IP address | Subnet mask | Default gateway |
 |---|---|---|---|---|
 | PC1 | 192.168.10.0/24 | 192.168.10.10 | 255.255.255.0 | 192.168.10.1 |
 | PC2 | 192.168.10.0/24 | 192.168.10.11 | 255.255.255.0 | 192.168.10.1 |
 | PC3 | 192.168.20.0/24 | 192.168.20.10 | 255.255.255.0 | 192.168.20.1 |
 | PC4 | 192.168.20.0/24 | 192.168.20.11 | 255.255.255.0 | 192.168.20.1 |
-| R1 Gi0/0 | 192.168.10.0/24 | 192.168.10.1 | 255.255.255.0 | n/a |
-| R1 Gi0/1 | 192.168.20.0/24 | 192.168.20.1 | 255.255.255.0 | n/a |
+| R1 Gi0/0 | 192.168.10.0/24 | 192.168.10.1 | 255.255.255.0 | N/A |
+| R1 Gi0/1 | 192.168.20.0/24 | 192.168.20.1 | 255.255.255.0 | N/A |
 
-## Configuración del router
+## Router configuration
 
 ```
 enable
@@ -34,26 +38,26 @@ interface gigabitEthernet0/1
 write memory
 ```
 
-Los switches funcionan con su configuración por defecto.
+The switches run with their default configuration.
 
-## Verificación
+## Verification
 
-- **Interfaces y rutas del router** (`show ip interface brief` y `show ip route`): las dos interfaces están `up/up` y las dos redes aparecen como conectadas (`C`).
+- **Router interfaces and routing table** (`show ip interface brief` and `show ip route`): both interfaces are `up/up`, and both networks appear as directly connected (`C`).
 
-  ![Salida del CLI](CLI.png)
+  ![CLI output](CLI.png)
 
-- **Conectividad** desde PC1: ping a PC2 (misma red) y a PC3 (otra red, a través del router). El TTL=127 confirma que el paquete atravesó un router. El primer paquete se pierde por la resolución ARP inicial.
+- **Connectivity** from PC1: ping to PC2 (same network) and to PC3 (different network, through the router). TTL=127 confirms the packet crossed one router. The first packet is lost because of the initial ARP resolution.
 
-  ![Pruebas de ping](PING.png)
+  ![Ping tests](PING.png)
 
-## Herramientas y conceptos
+## Tools and concepts
 
 - Cisco Packet Tracer, Cisco IOS (CLI)
-- Direccionamiento IPv4, máscara de subred, gateway
-- Enrutamiento entre redes locales
-- Comandos básicos de IOS: `enable`, `configure terminal`, `ip address`, `no shutdown`, `write memory`, `show ip route`
+- IPv4 addressing, subnet mask, default gateway
+- Routing between local networks
+- Basic IOS commands: `enable`, `configure terminal`, `ip address`, `no shutdown`, `write memory`, `show ip route`
 
-## Archivos
+## Files
 
-- `lab1-dos-redes.pkt`: archivo del laboratorio (se abre con Cisco Packet Tracer)
-- `diagrama-red.png`, `CLI.png`, `PING.png`: capturas
+- `lab1-dos-redes.pkt`: lab file (open it with Cisco Packet Tracer)
+- `diagrama-red.png`, `CLI.png`, `PING.png`: screenshots
