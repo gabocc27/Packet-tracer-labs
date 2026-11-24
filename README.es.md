@@ -2,7 +2,7 @@
 
 [Read in English](README.md)
 
-**Laboratorios:** Lab 1 (esta página) · [Lab 2: DHCP](lab2-dhcp/README.es.md) · [Lab 3: Seguridad del router](lab3-seguridad/README.es.md)
+**Laboratorios:** Lab 1 (esta página) · [Lab 2: DHCP](lab2-dhcp/README.es.md) · [Lab 3: Seguridad del router](lab3-seguridad/README.es.md) · [Lab 4: Wireshark](lab4-wireshark/README.es.md)
 
 Diseñé y configuré una red con dos subredes conectadas mediante un router Cisco 2911 y dos switches 2960. Asigné direcciones IP estáticas a cuatro PC, configuré las interfaces del router como gateway de cada red y verifiqué la conectividad con `ping` y `show ip route`.
 
