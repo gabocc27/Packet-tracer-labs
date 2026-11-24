@@ -2,7 +2,7 @@
 
 [Leer en español](README.es.md)
 
-**Labs:** Lab 1 (this page) · [Lab 2: DHCP](lab2-dhcp/README.md) · [Lab 3: Router security](lab3-seguridad/README.md)
+**Labs:** Lab 1 (this page) · [Lab 2: DHCP](lab2-dhcp/README.md) · [Lab 3: Router security](lab3-seguridad/README.md) · [Lab 4: Wireshark](lab4-wireshark/README.md)
 
 I designed and configured a network with two subnets connected by a Cisco 2911 router and two 2960 switches. I assigned static IP addresses to four PCs, configured the router interfaces as the default gateway for each network, and verified connectivity with `ping` and `show ip route`.
 
